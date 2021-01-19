@@ -38,11 +38,5 @@
     "background_color": "#119955",
     "theme_color": "#119955",
     "description": "App para la lectura del capitulo diario de la Santa Biblia",
-    "prefer_related_applications": true,
-    "related_applications": [
-      {
-        "platform": "play",
-        "id": "com.google.samples.apps.iosched"
-      }
-    ]
+    "prefer_related_applications": false
 }

@@ -46,7 +46,7 @@ body {
 .overlay {
 	position: fixed;
 	top: 0;
-	bottom: 0;
+	height: 100vh;
 	left: 0;
 	right: 0;
 	background-color: #f8f9fa;
@@ -94,7 +94,10 @@ select.form-control {
     -moz-appearance: none;
     appearance: none;
 }
-.fixed-bottom {
-	/*margin-bottom: 5px;*/
+.bottom {
+	position: fixed;
+	bottom: 5px;
+	left: 0;
+	right: 0;
 	padding: 15px;
 }

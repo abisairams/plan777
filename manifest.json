@@ -1,0 +1,48 @@
+{
+    "name": "Plan 777",
+    "short_name": "Plan777",
+    "icons": [
+        {
+            "src": "img/icons/app-48px.png",
+            "type": "image/png",
+            "sizes": "48x48"
+        },
+        {
+            "src": "img/icons/app-144px.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "img/icons/app-192px.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "img/icons/app-256px.png",
+            "type": "image/png",
+            "sizes": "256x256"
+        },
+        {
+            "src": "img/icons/app-384px.png",
+            "type": "image/png",
+            "sizes": "384x384"
+        },
+        {
+            "src": "img/icons/app-512px.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#119955",
+    "theme_color": "#119955",
+    "description": "App para la lectura del capitulo diario de la Santa Biblia",
+    "prefer_related_applications": true,
+    "related_applications": [
+      {
+        "platform": "play",
+        "id": "com.google.samples.apps.iosched"
+      }
+    ]
+}

@@ -2,28 +2,26 @@
 
     const output = document.getElementById('output')
     const database = await getDB()
-    const baseSettedByUser = localStorage.getItem('base')
+    const baseSettedByUser = await localStorage.getItem('base')
 
     const base = {
         bookId: parseInt(database[26 - 1].id),
         bookChapterDay: 28,
+        boookChapters: database[26 - 1].chapters,
         date: new Date('jan 17 2021')
     }
 
     if (baseSettedByUser) {
         db = JSON.parse(baseSettedByUser)
 
-    
         base.bookId = db.book.id,
-        base.bookChapterDay = db.book.chapter,
+        base.bookChapterDay = parseInt(db.book.chapter),
         base.date = new Date(db.date)
     }
-
 
     const currentChapter = {
         bookId: base.bookId,
         bookChapterDay: base.bookChapterDay,
-        boookName: '',
         date: new Date()
     }
 
@@ -31,22 +29,24 @@
 
     function calculate(diffInDays) {
         const currentBook = database[currentChapter.bookId - 1]
-        if (diffInDays + base.bookChapterDay > currentBook.chapters) {
-            diffInDays = diffInDays - currentBook.chapters
-            currentChapter.bookId++
-            currentChapter.boookName = currentBook.name
-            currentChapter.bookChapterDay = diffInDays + parseInt(base.bookChapterDay)
-            calculate(diffInDays)
-        } else {
+
+        if (diffInDays + base.bookChapterDay < currentBook.chapters) {
             currentChapter.bookChapterDay = diffInDays + parseInt(base.bookChapterDay)
             currentChapter.boookName = currentBook.name
+            return currentChapter
         }
-        return currentChapter
+
+        diffInDays -= currentBook.chapters
+        currentChapter.bookId++
+        
+        calculate(diffInDays)
     }
 
 
 
     calculate(diffInDays)
+
+
 
     output.innerText = `${currentChapter.boookName}  ${currentChapter.bookChapterDay}`
 

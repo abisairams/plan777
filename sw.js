@@ -9,6 +9,7 @@ self.addEventListener('install', e => {
                 'db/books.json',
                	'js/main.js',
                	'js/settings.js',
+               	'css/styles.css',
                 'css/bootstrap.min.css',
                 'css/bootstrap.min.css.map',
                 'index.html',
